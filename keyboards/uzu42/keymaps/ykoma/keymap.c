@@ -7,6 +7,7 @@
 #ifdef SSD1306OLED
   #include "ssd1306.h"
 #endif
+#include "keymap_jp.h"
 
 
 #ifdef RGBLIGHT_ENABLE
@@ -37,11 +38,11 @@ enum custom_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT( \
   //,---------------------------------------.                  ,---------------------------------------.
-        KC_Q,   KC_W,   KC_F,   KC_P,   KC_G,                      KC_J,   KC_L,   KC_U,   KC_Y,KC_SCLN,\
+        KC_Q,   KC_W,   KC_F,   KC_P,   KC_G,                      KC_J,   KC_L,   KC_U,   KC_Y,JP_SCLN,\
   //|-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------|
         KC_A,   KC_R,   KC_S,   KC_T,   KC_D,                      KC_H,   KC_N,   KC_E,   KC_I,   KC_O,\
   //|-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------|
-        KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,                      KC_K,   KC_M,KC_COMM, KC_DOT,KC_SLSH,\
+        KC_Z,   KC_X,   KC_C,   KC_V,   KC_B,                      KC_K,   KC_M,JP_COMM, JP_DOT,JP_SLSH,\
   //|-------+-------+-------+-------+-------+-------|  |-------+-------+-------+-------+-------+-------|
      KC_LSFT,KC_LCTL,KC_LALT,KC_LGUI,  LOWER, KC_ENT,    KC_SPC,  RAISE,KC_BSPC,KC_RGUI, KC_ESC,KC_RSFT \
   //|-------+-------+-------+-------+-------+-------|  |-------+-------+-------+-------+-------+-------|
@@ -49,23 +50,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
   [_LOWER] = LAYOUT( \
   //,---------------------------------------.                  ,---------------------------------------.
-        KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                      KC_6,   KC_7,   KC_8,   KC_9,   KC_0,\
+        KC_1,   KC_2,   KC_3,   KC_4,   KC_5,                   JP_EXLM, JP_DQT,JP_HASH, JP_DLR,JP_PERC,\
   //|-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------|
-      KC_TAB,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                   KC_LEFT,KC_DOWN,  KC_UP,KC_RGHT,XXXXXXX,\
+        KC_6,   KC_7,   KC_8,   KC_9,   KC_0,                   JP_AMPR,JP_QUOT,JP_LPRN,JP_RPRN,JP_MINS,\
   //|-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------|
-     XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                   XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,\
+      KC_TAB,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                   XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,\
   //|-------+-------+-------+-------+-------+-------|  |-------+-------+-------+-------+-------+-------|
-     _______,_______,_______,_______,_______,KC_HANJ,   KC_HAEN,_______, KC_DEL,_______,_______,_______ \
+     _______,_______,_______,JP_ZHTG,_______,JP_MEISU, JP_MKANA,_______, KC_DEL,_______,_______,_______ \
   //|-------+-------+-------+-------+-------+-------|  |-------+-------+-------+-------+-------+-------|
   ),
 
   [_RAISE] = LAYOUT( \
   //,---------------------------------------.                  ,---------------------------------------.
-     KC_EXLM,KC_DQUO,KC_HASH, KC_DLR,KC_PERC,                   KC_AMPR,KC_QUOT,KC_LPRN,KC_RPRN,KC_MINS,\
+     XXXXXXX,  KC_UP,XXXXXXX,XXXXXXX,XXXXXXX,                   JP_CIRC, JP_YEN,  JP_AT,JP_LBRC,JP_COLN,\
   //|-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------|
-      KC_TAB,KC_CIRC,KC_NUBS,  KC_AT,KC_LBRC,                   KC_COLN,KC_DQUO,KC_RBRC,KC_UNDS,XXXXXXX,\
+     KC_LEFT,KC_DOWN,KC_RGHT,XXXXXXX,XXXXXXX,                   JP_RBRC,JP_UNDS,XXXXXXX,XXXXXXX,XXXXXXX,\
   //|-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------|
-     XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                   XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,\
+      KC_TAB,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                   XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,\
   //|-------+-------+-------+-------+-------+-------|  |-------+-------+-------+-------+-------+-------|
      _______,_______,_______,_______,_______,_______,   _______,_______, KC_DEL,_______,_______,_______ \
   //|-------+-------+-------+-------+-------+-------|  |-------+-------+-------+-------+-------+-------|
@@ -75,9 +76,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //,---------------------------------------.                  ,---------------------------------------.
        KC_F1,  KC_F2,  KC_F3,  KC_F4,  KC_F5,                     KC_F6,  KC_F7,  KC_F8,  KC_F9, KC_F10,\
   //|-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------|
-      KC_TAB, KC_F11, KC_F12,  RESET,XXXXXXX,                   XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,\
+      KC_F11, KC_F12,  RESET,XXXXXXX,XXXXXXX,                   XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,\
   //|-------+-------+-------+-------+-------|                  |-------+-------+-------+-------+-------|
-     XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                   XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,\
+      KC_TAB,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,                   XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,XXXXXXX,\
   //|-------+-------+-------+-------+-------+-------|  |-------+-------+-------+-------+-------+-------|
      _______,_______,_______,_______,_______,_______,   _______,_______,_______,_______,_______,_______ \
   //|-------+-------+-------+-------+-------+-------|  |-------+-------+-------+-------+-------+-------|
